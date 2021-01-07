@@ -1,19 +1,34 @@
 {
   "musers": [
     {
-      "name": "Ivan",
-      "surname": "Ivanov",
-      "id": 1
-    },
-    {
-      "name": "туц",
-      "surname": "тфьу",
+      "name": "Петр",
+      "surname": "Петров",
+      "patronymic": "Петрович",
+      "phone": "89653269050",
+      "bday": "1980-10-07",
+      "departament": "Отдел доставки",
+      "email": "petrov@mail.ru",
       "id": 2
     },
     {
-      "name": "new1",
-      "surname": "name1",
+      "name": "Иван",
+      "surname": "Иванов",
+      "patronymic": "Иванович",
+      "phone": "89063197630",
+      "bday": "1996-02-29",
+      "departament": "Юридический отдел",
+      "email": "e-mail@mail.ru",
       "id": 3
+    },
+    {
+      "name": "Петр3",
+      "surname": "Петров",
+      "patronymic": "Петрович",
+      "phone": "89653269050",
+      "bday": "1970-09-23",
+      "departament": "Отдел продаж",
+      "email": "petrov@mail.ru",
+      "id": 4
     }
   ]
 }

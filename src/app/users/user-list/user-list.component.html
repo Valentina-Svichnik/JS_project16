@@ -1,3 +1,21 @@
+<div class="container-fluid my-5">
+  <div class="row">
+    <div class="col-6">
+      <h5>Поиск по имени и фамилии</h5>
+      <input type="text" class="form-control" placeholder="Поиск" [(ngModel)]="searchStr" (input)="onSearchWorker()">
+    </div>
+    <div class="col-6">
+      <h5>Сортировка</h5>
+      <select class="custom-select btn-sm"  id="departament" [(ngModel)]="typeOfSort">
+        <option selected>Сортировка по id (по возрастанию)</option>
+        <option>Сортировка по id (по убыванию)</option>
+        <option>Сортировка по возрасту (по возрастанию)</option>
+        <option>Сортировка по возрасту (по убыванию)</option>
+      </select>
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid">
   <table class="table">
     <thead>
@@ -5,6 +23,8 @@
         <th scope="col">#</th>
         <th scope="col">Имя</th>
         <th scope="col">Фамилия</th>
+        <th scope="col">Возраст</th>
+        <th scope="col">Отдел</th>
         <th class="text-right" scope="col">
           <button class="btn btn-primary" (click)="onAddProfile()">
             Добавить пользователя
@@ -13,10 +33,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users | myfilter : searchStr : typeOfSort">    
         <td scope="row">{{ user.id }}</td>
         <td>{{ user.name }}</td>
         <td>{{ user.surname }}</td>
+        <td>{{ getAge(user.bday) }}</td>
+        <td>{{ user.departament }}</td>
         <td class="text-right">
           <button class="btn btn-primary" (click)="onLinkProfile(user.id)">
             Редактировать

@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid mt-3">
   <form [formGroup]="userForm">
-    <div class="form-group">
+    <div class="form-group col-5">
       <label for="username">Имя</label>
       <input
         type="text"
@@ -9,8 +9,6 @@
         placeholder="Имя"
         formControlName="name"
       />
-    </div>
-    <div class="form-group">
       <label for="usersurname">Фамилия</label>
       <input
         type="text"
@@ -19,6 +17,50 @@
         placeholder="Фамилия"
         formControlName="surname"
       />
+
+      <label for="patronymic">Отчество</label>
+      <input
+        type="text"
+        class="form-control"
+        id="patronymic"
+        placeholder="Отчество"
+        formControlName="patronymic"
+      />
+
+      <label for="phone">Телефон</label>
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        placeholder="Телефон"
+        formControlName="phone"
+      />
+
+      <label for="email">E-mail</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        placeholder="email@mail.ru"
+        formControlName="email"
+      />
+
+      <label for="bday">Дата рождения</label>
+      <input
+        type="text"
+        class="form-control"
+        id="bday"
+        placeholder="гггг-мм-дд"
+        formControlName="bday"
+      />
+
+      <label for="departament">Отдел</label>
+      <select class="custom-select btn-sm" formControlName="departament" id="departament">
+        <option selected>IT отдел</option>
+        <option>Отдел продаж</option>
+        <option>Отдел доставки</option>
+        <option>Юридический отдел</option>
+      </select>
     </div>
     <button class="btn btn-primary mr-4" [disabled]="userForm.invalid" (click)="onSave()">
       Сохранить

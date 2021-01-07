@@ -28,6 +28,11 @@ export class UserEditComponent implements OnInit {
     this.userForm = new FormGroup({
       name: new FormControl(null, [Validators.required]),
       surname: new FormControl(null, [Validators.required]),
+      patronymic: new FormControl(null, [Validators.required]),
+      phone: new FormControl(null, [Validators.required]),
+      bday: new FormControl(null, [Validators.required]),
+      departament: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required]),
     });
     this.getData();
   }
@@ -43,6 +48,11 @@ export class UserEditComponent implements OnInit {
       this.userForm.patchValue({                                  //заносим значения полей в форму для редактирвоания
         name: this.user.name,
         surname: this.user.surname,
+        patronymic: this.user.patronymic,
+        phone: this.user.phone,
+        bday: this.user.bday,
+        departament: this.user.departament,
+        email: this.user.email,
       });
     }
   }
